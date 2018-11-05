@@ -1,11 +1,12 @@
 package org.ac.chatirc.server;
 
+import org.ac.chatirc.server.commands.CommandList;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.Iterator;
 import java.util.List;
 
 public class ReceiveClient implements Runnable {
@@ -32,6 +33,7 @@ public class ReceiveClient implements Runnable {
     }
 
     private String read() throws IOException {
+
         BufferedReader serverRead = new BufferedReader(
                 new InputStreamReader(
                         client.getInputStream()));
@@ -44,14 +46,23 @@ public class ReceiveClient implements Runnable {
 
     }
 
-    private void write(String message) throws IOException {
+    private void write(String message) {
 
         synchronized (clientConnectsList) {
 
             for (Socket clientConnect : clientConnectsList) {
 
-                PrintWriter printWriter = new PrintWriter(clientConnect.getOutputStream(), true);
-                printWriter.println(nameClient + ":: " + message);
+                PrintWriter printWriter = null;
+                try {
+                    printWriter = new PrintWriter(clientConnect.getOutputStream(), true);
+
+                    printWriter.println(nameClient + ":: " + message);
+
+                } catch (IOException e) {
+                    System.err.println("Error to open the write message from server to users. " + e.getMessage());
+                } catch (NullPointerException e) {
+                    System.err.println("Error to print on user");
+                }
 
             }
 
@@ -59,12 +70,63 @@ public class ReceiveClient implements Runnable {
 
     }
 
-    private CommandList verifyCommands(String input){
+    private void writeClient(String message, Socket clientSocket) {
+
+        PrintWriter printWriter = null;
+        try {
+
+            printWriter = new PrintWriter(clientSocket.getOutputStream(), true);
+            printWriter.print("Server command list: " + message);
+            printWriter.flush();
 
 
+        } catch (IOException e) {
+            System.err.println("Error to open the write message from server to users. " + e.getMessage());
+        } catch (NullPointerException e) {
+            System.err.println("Error to print on user");
+        }
 
 
+    }
 
+    private void verifyCommands(String input)  {
+
+        if (!input.contains("/")) {
+
+            write(input);
+            return;
+
+        }
+
+        String[] clientInput = input.split(" ");
+
+        CommandList cmd = CommandList.getCommandInput(clientInput[0]);
+
+        switch (cmd) {
+            case CLOSE:
+                synchronized (clientConnectsList) {
+                    clientConnectsList.remove(this);
+                    System.out.println(nameClient + " disconnect the server.");
+                    closeSocket();
+                }
+                break;
+            case LIST_CMD:
+                writeClient(CommandList.buildStringList(), client);
+                break;
+            case NAME:
+                write("change the name to " + clientInput[1]);
+                setNameClient(clientInput[1]);
+                break;
+            case WHISPER:
+
+                break;
+        }
+
+
+    }
+
+    private void setNameClient(String name){
+        nameClient = name;
     }
 
     private void closeSocket() {
@@ -82,18 +144,20 @@ public class ReceiveClient implements Runnable {
 
         while (!client.isClosed()) {
 
+            String input = null;
+
             try {
-                String input = read();
+
+                input = read();
 
                 verifyCommands(input);
 
             } catch (IOException e) {
-                System.err.println("Error on read/write the message. " + e.getMessage());
+                System.err.println("Error ");
             }
 
-        }
 
-        closeSocket();
+        }
 
     }
 }

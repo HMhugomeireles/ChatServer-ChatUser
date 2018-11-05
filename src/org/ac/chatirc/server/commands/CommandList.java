@@ -1,8 +1,11 @@
-package org.ac.chatirc.server;
+package org.ac.chatirc.server.commands;
 
 public enum CommandList {
     CLOSE("/quit"),
-    UNKNOWN("/");
+    LIST_CMD("/cmdlist"),
+    NAME("/name"),
+    WHISPER("/whisper"),
+    UNKNOWN("");
 
     private String command;
 
@@ -18,6 +21,18 @@ public enum CommandList {
         }
 
         return UNKNOWN;
+    }
+
+    public static String buildStringList(){
+
+        StringBuilder cmdList = new StringBuilder();
+        cmdList.append("\n");
+
+        for (CommandList cmd: values()){
+            cmdList.append(cmd.getCommand()+ "\n");
+        }
+
+        return cmdList.toString();
     }
 
     public String getCommand() {
