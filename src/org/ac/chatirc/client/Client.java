@@ -1,41 +1,49 @@
 package org.ac.chatirc.client;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
 public class Client {
 
     private Socket clientSocket;
-
+    private BufferedReader inMessage;
+    private PrintWriter outMessage;
+    private Thread serverSide;
 
     public Client(String hostName, int port) throws IOException {
-        clientSocket = new Socket(hostName,port);
+        clientSocket = new Socket(hostName, port);
+
+        outMessage = new PrintWriter(clientSocket.getOutputStream(), true);
+
+        serverSide = new Thread(new ReceiveServer(clientSocket));
     }
 
-    public void startComunication(){
+    public void startCommunication() {
 
-        while(true){
+        receiveMessage();
 
-            write(read());
+        while (true) {
+
+            read();
 
         }
 
     }
 
-    private String read(){
+    private void receiveMessage(){
 
-        Scanner reader = new Scanner(System.in);
-
-
+        serverSide.start();
 
     }
 
-    private void write(String message){
 
+    private void read() {
 
-
-
+        Scanner reader = new Scanner(System.in);
+        outMessage.println(reader.nextLine());
 
     }
 

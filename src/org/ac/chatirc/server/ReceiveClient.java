@@ -75,7 +75,11 @@ public class ReceiveClient implements Runnable {
         while (!client.isClosed()) {
 
             try {
-                write(read());
+                read();
+
+
+
+                write();
             } catch (IOException e) {
                 System.err.println("Error on read/write the message. " + e.getMessage());
             }
