@@ -59,6 +59,14 @@ public class ReceiveClient implements Runnable {
 
     }
 
+    private CommandList verifyCommands(String input){
+
+
+
+
+
+    }
+
     private void closeSocket() {
         try {
             client.close();
@@ -75,11 +83,10 @@ public class ReceiveClient implements Runnable {
         while (!client.isClosed()) {
 
             try {
-                read();
+                String input = read();
 
+                verifyCommands(input);
 
-
-                write();
             } catch (IOException e) {
                 System.err.println("Error on read/write the message. " + e.getMessage());
             }
