@@ -1,8 +1,10 @@
 package org.ac.chatirc.server;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Collections;
+import java.util.Currency;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -14,36 +16,91 @@ public class Server {
 
     private ServerSocket serverSocket;
     private ExecutorService clientsService;
-    private List<Socket> clientsSockets;
+    private List<User> users;
 
     public Server(int port) throws IOException {
         serverSocket = new ServerSocket(port);
         clientsService = Executors.newFixedThreadPool(NUMBER_THREADS);
-        clientsSockets = new LinkedList<>();
+        users = Collections.synchronizedList(new LinkedList<>());
     }
 
-    public void start(){
+    public void start() {
         int count = 1;
-        while(true){
+
+        while (true) {
+
             waitConnection(count);
             count++;
+
         }
     }
 
-    private void waitConnection(int numberClient){
-        Socket clientSocket = null;
+    private void waitConnection(int numberClient) {
+        Socket userSocket = null;
 
         try {
-            clientSocket = serverSocket.accept();
+            userSocket = serverSocket.accept();
 
-            String nameClient = "Guess-" + numberClient;
+            String nameUser = "Guess-" + numberClient;
 
-            clientsService.submit(new ReceiveClient(clientSocket, clientsSockets, nameClient ));
+            clientsService.submit(addConnection(userSocket, nameUser));
+
+            broadcast(nameUser + Message.CONNECTION);
+            System.out.println(nameUser + Message.CONNECTION);
 
         } catch (IOException e) {
             System.err.println("Error on accept connecting. " + e.getMessage());
         }
 
+    }
+
+    private User addConnection(Socket userSocket, String name) {
+
+        synchronized (users) {
+
+            User user = new User(name, userSocket, this);
+            users.add(user);
+
+            return user;
+        }
+    }
+
+    public void broadcast(String message) {
+
+        synchronized (users) {
+
+            System.out.println(message);
+
+            for (User user : users) {
+
+                user.write(message);
+
+            }
+
+        }
+
+    }
+
+    public void sendTo(String message, String destination) {
+
+        synchronized (users){
+
+            for (User user: users){
+
+                if (user.getName().equals(destination)){
+
+                    user.write(message);
+
+                }
+
+            }
+
+        }
+
+    }
+
+    public void removeUser(User user){
+        users.remove(user);
     }
 
 }

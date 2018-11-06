@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class Client {
 
     private Socket clientSocket;
-    private BufferedReader inMessage;
     private PrintWriter outMessage;
     private Thread serverSide;
 
