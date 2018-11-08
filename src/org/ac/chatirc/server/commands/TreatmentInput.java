@@ -3,7 +3,6 @@ package org.ac.chatirc.server.commands;
 public class TreatmentInput {
 
     public static boolean isCommand(String line) {
-
         String firstChar = line.substring(0, 1);
 
         if (firstChar.equals("/")) {
@@ -28,7 +27,14 @@ public class TreatmentInput {
         String temp = line.replaceFirst(getCommandFromLine(line), "")
                 .replaceFirst(" ", "");
 
-        return temp.substring(0, temp.indexOf(" "));
+        if (temp.contains(" ")) {
+
+            return temp.substring(0, temp.indexOf(" "));
+
+        }
+
+        return temp.toString();
+
     }
 
     public static String getMessageFromLine(String line) {

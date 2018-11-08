@@ -3,17 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0f095f99-0be0-4729-8151-dbf6df40831e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/server/MainServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/server/MainServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/server/ReceiveClient$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/server/ReceiveClient.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/server/Server.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/server/commands/CommandList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/server/commands/CommandList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/server/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/server/MainServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/server/ReceiveClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/server/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/server/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/CommandList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/CommandList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/server/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/server/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/TreatmentInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/TreatmentInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/UserlistHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/UserlistHandle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/WhoamiHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/WhoamiHandle.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,32 +23,33 @@
     <session id="2069953118">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="53" />
+          <entry key="java" value="61" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="53" />
+          <entry key="JAVA" value="61" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="71" />
-          <entry key="java" value="8365" />
+          <entry key="java" value="9016" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8365" />
+          <entry key="JAVA" value="9016" />
           <entry key="PLAIN_TEXT" value="71" />
         </counts>
       </usages-collector>
@@ -63,40 +61,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/Server.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="71" column="38" selection-start-line="71" selection-start-column="38" selection-end-line="71" selection-end-column="38" />
-              <folding>
-                <element signature="e#2120#2121#0" expanded="true" />
-                <element signature="e#2154#2155#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/Message.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/CommandList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+            <state relative-caret-position="401">
+              <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
               <folding>
-                <element signature="method#CommandList#0;class#CommandList#0" />
-                <element signature="method#getCommandInput#0;class#CommandList#0" />
-                <element signature="e#1378#1379#0" expanded="true" />
-                <element signature="e#1407#1408#0" expanded="true" />
-                <element signature="e#1446#1447#0" expanded="true" />
-                <element signature="e#1480#1481#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,11 +76,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state relative-caret-position="413">
+              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#User#0;class#User#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/CommandHandle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -158,14 +140,15 @@
         <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/CloseHandle.java" />
         <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/UnknowHandle.java" />
         <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/HelpHandle.java" />
-        <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/TreatmentInput.java" />
         <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/WhisperHandle.java" />
-        <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/Server.java" />
-        <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/NameHandle.java" />
-        <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/Message.java" />
-        <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/WhoamiHandle.java" />
-        <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/User.java" />
         <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/CommandList.java" />
+        <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/UserlistHandle.java" />
+        <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/WhoamiHandle.java" />
+        <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/NameHandle.java" />
+        <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/TreatmentInput.java" />
+        <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/Server.java" />
+        <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/User.java" />
+        <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/Message.java" />
       </list>
     </option>
   </component>
@@ -175,7 +158,8 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="966" />
@@ -188,8 +172,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -240,7 +224,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541545514875" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541635401673" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -312,12 +296,14 @@
       <updated>1541427231429</updated>
       <workItem from="1541427236021" duration="2589000" />
       <workItem from="1541430326634" duration="26816000" />
-      <workItem from="1541496025247" duration="26639000" />
+      <workItem from="1541496025247" duration="27461000" />
+      <workItem from="1541581765328" duration="10070000" />
+      <workItem from="1541634076384" duration="652000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56044000" />
+    <option name="totallyTimeSpent" value="67588000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -329,10 +315,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="966" extended-state="0" />
-    <editor active="true" />
+    <frame x="-1" y="23" width="1920" height="966" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20021299" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20447284" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -350,7 +335,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3798627" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="11" visible="true" weight="0.33295193" />
+      <window_info active="true" anchor="bottom" id="Run" order="11" visible="true" weight="0.23455377" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -413,9 +398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
           <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -446,37 +428,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/Input.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="65" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/Handle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/CommandHandle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/ReceiveClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="106" column="48" lean-forward="true" selection-start-line="106" selection-start-column="48" selection-end-line="106" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/Input.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/Handle.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/ReceiveClient.java" />
     <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/CloseHandle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -504,33 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/TreatmentInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/NameHandle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/HelpHandle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/WhisperHandle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -541,17 +468,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/Message.java">
+    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/CommandList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
+        <state relative-caret-position="153">
+          <caret line="9" column="77" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="77" />
+          <folding>
+            <element signature="method#CommandList#0;class#CommandList#0" />
+            <element signature="method#getCommandInput#0;class#CommandList#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/WhoamiHandle.java">
+    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/NameHandle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Calendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="71" column="31" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/HelpHandle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -560,37 +508,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="71" column="38" selection-start-line="71" selection-start-column="38" selection-end-line="71" selection-end-column="38" />
+        <state relative-caret-position="654">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
           <folding>
-            <element signature="e#2120#2121#0" expanded="true" />
-            <element signature="e#2154#2155#0" expanded="true" />
+            <element signature="method#addConnection#0;class#Server#0" />
+            <element signature="method#listUser#0;class#Server#0" />
+            <element signature="method#broadcast#0;class#Server#0" />
+            <element signature="e#2553#2554#0" expanded="true" />
+            <element signature="e#2587#2588#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/TreatmentInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-284">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/WhoamiHandle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/UserlistHandle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/CommandHandle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        <state relative-caret-position="413">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#User#0;class#User#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/CommandList.java">
+    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        <state relative-caret-position="401">
+          <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
           <folding>
-            <element signature="method#CommandList#0;class#CommandList#0" />
-            <element signature="method#getCommandInput#0;class#CommandList#0" />
-            <element signature="e#1378#1379#0" expanded="true" />
-            <element signature="e#1407#1408#0" expanded="true" />
-            <element signature="e#1446#1447#0" expanded="true" />
-            <element signature="e#1480#1481#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -5,6 +5,7 @@ import org.ac.chatirc.server.commands.TreatmentInput;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.Calendar;
 
 public class User implements Runnable {
 
@@ -40,7 +41,7 @@ public class User implements Runnable {
                 return;
             }
 
-            System.out.println(name + ":: " + line);
+            server.broadcast(Message.getHourNow() + name + ":: " + line);
 
         } catch (IOException e) {
             System.err.println("Error to input stream. " + e.getMessage());

@@ -27,6 +27,8 @@ public class Server {
     public void start() {
         int count = 1;
 
+        System.out.println("Server start and wait connection. " + serverSocket.toString());
+
         while (true) {
 
             waitConnection(count);
@@ -46,7 +48,6 @@ public class Server {
             clientsService.submit(addConnection(userSocket, nameUser));
 
             broadcast(nameUser + Message.CONNECTION);
-            System.out.println(nameUser + Message.CONNECTION);
 
         } catch (IOException e) {
             System.err.println("Error on accept connecting. " + e.getMessage());
@@ -63,6 +64,21 @@ public class Server {
 
             return user;
         }
+    }
+
+    public String listUser(){
+        StringBuilder userList = new StringBuilder("List of users connect::\n");
+
+        synchronized (users){
+
+            for (User user: users){
+                userList.append("\n").append(user.getName());
+            }
+
+        }
+        userList.append("\n");
+
+        return userList.toString();
     }
 
     public void broadcast(String message) {

@@ -8,6 +8,8 @@ public class UserlistHandle implements CommandHandle {
     @Override
     public void dispatch(Server server, User user, String line) {
 
+        server.sendTo(server.listUser(), user.getName());
+
     }
 
 }
