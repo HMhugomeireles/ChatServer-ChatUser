@@ -5,7 +5,6 @@ import org.ac.chatirc.server.commands.TreatmentInput;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.Calendar;
 
 public class User implements Runnable {
 

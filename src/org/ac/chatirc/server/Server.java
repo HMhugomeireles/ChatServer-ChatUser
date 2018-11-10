@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class Server {
 
@@ -43,9 +44,10 @@ public class Server {
         try {
             userSocket = serverSocket.accept();
 
-            String nameUser = "Guess-" + numberClient;
+            String nameUser = "Guest-" + numberClient;
 
-            clientsService.submit(addConnection(userSocket, nameUser));
+            //clientsService.submit();
+            clientsService.execute(addConnection(userSocket, nameUser));
 
             broadcast(nameUser + Message.CONNECTION);
 
