@@ -4,18 +4,8 @@
     <list default="true" id="0f095f99-0be0-4729-8151-dbf6df40831e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/client/ReceiveServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/server/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/server/commands/CommandList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat-Irc/org/ac/chatirc/server/commands/CommandList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/client/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/client/MainClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/client/ReceiveServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/client/HandleInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/server/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/server/File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/server/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/server/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/server/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/server/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/CommandList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/CommandList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/FilesendHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/server/commands/FileHandle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/ac/chatirc/client/HandleInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ac/chatirc/client/HandleInput.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,35 +18,35 @@
     <session id="2069953118">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
-          <entry key="project.open.time.0" value="5" />
+          <entry key="project.closed" value="12" />
+          <entry key="project.open.time.0" value="6" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="108" />
+          <entry key="java" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="108" />
+          <entry key="JAVA" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="115" />
-          <entry key="java" value="12102" />
+          <entry key="java" value="12380" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="12102" />
+          <entry key="JAVA" value="12380" />
           <entry key="PLAIN_TEXT" value="115" />
         </counts>
       </usages-collector>
@@ -71,54 +61,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+            <state relative-caret-position="-126">
+              <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
               <folding>
-                <element signature="e#1936#1937#0" expanded="true" />
-                <element signature="e#1989#1990#0" expanded="true" />
-                <element signature="e#1904#1905#0" expanded="true" />
-                <element signature="e#1942#1943#0" expanded="true" />
-                <element signature="e#2384#2385#0" expanded="true" />
-                <element signature="e#2423#2424#0" expanded="true" />
+                <element signature="method#disconnect#0;class#Client#0" />
+                <element signature="method#readFromServer#0;class#Client#0" />
+                <element signature="e#1794#1795#0" expanded="true" />
+                <element signature="e#1827#1828#0" expanded="true" />
+                <element signature="e#1875#1876#0" expanded="true" />
+                <element signature="e#1909#1910#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/Server.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-52">
-              <caret line="26" column="56" lean-forward="true" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
-              <folding>
-                <element signature="method#start#0;class#Server#0" />
-                <element signature="method#waitFile#0;class#Server#0" />
-                <element signature="method#addConnection#0;class#Server#0" />
-                <element signature="method#listUser#0;class#Server#0" />
-                <element signature="method#broadcast#0;class#Server#0" />
-                <element signature="method#sendTo#0;class#Server#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/TreatmentInput.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/User.java">
+        <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/client/HandleInput.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="34" column="81" selection-start-line="34" selection-start-column="81" selection-end-line="34" selection-end-column="81" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="442">
+              <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -179,10 +140,10 @@
         <option value="$PROJECT_DIR$/src/org/ac/chatirc/client/FileConnection.java" />
         <option value="$PROJECT_DIR$/src/org/ac/chatirc/client/servercommands/ServerCommands.java" />
         <option value="$PROJECT_DIR$/src/org/ac/chatirc/client/FileSend.java" />
-        <option value="$PROJECT_DIR$/src/org/ac/chatirc/client/HandleInput.java" />
-        <option value="$PROJECT_DIR$/src/org/ac/chatirc/client/Client.java" />
         <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/Server.java" />
         <option value="$PROJECT_DIR$/src/org/ac/chatirc/server/User.java" />
+        <option value="$PROJECT_DIR$/src/org/ac/chatirc/client/Client.java" />
+        <option value="$PROJECT_DIR$/src/org/ac/chatirc/client/HandleInput.java" />
       </list>
     </option>
   </component>
@@ -192,10 +153,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1143" />
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="777" />
+    <option name="width" value="1193" />
     <option name="height" value="966" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -242,15 +202,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541955119082" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541961487221" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -305,8 +265,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainServer" />
         <item itemvalue="Application.MainClient" />
+        <item itemvalue="Application.MainServer" />
       </list>
     </recent_temporary>
   </component>
@@ -331,12 +291,13 @@
       <workItem from="1541717066154" duration="664000" />
       <workItem from="1541788728296" duration="599000" />
       <workItem from="1541865167755" duration="136000" />
-      <workItem from="1541878516293" duration="33050000" />
+      <workItem from="1541878516293" duration="35514000" />
+      <workItem from="1541958214736" duration="2753000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108007000" />
+    <option name="totallyTimeSpent" value="113224000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -348,9 +309,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="966" extended-state="6" />
+    <frame x="0" y="23" width="1193" height="966" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15601704" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25456125" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -365,7 +326,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32951945" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.056064073" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.18649885" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info active="true" anchor="bottom" id="Run" order="11" visible="true" weight="0.23455377" />
@@ -462,9 +423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -529,16 +487,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/client/servercommands/ServerCommands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="e#201#202#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/client/servercommands/ServerCommands.java" />
     <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/CommandList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -560,13 +509,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="508">
           <caret line="135" column="9" selection-start-line="135" selection-start-column="9" selection-end-line="135" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/client/HandleInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -597,25 +539,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/client/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/TreatmentInput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-          <folding>
-            <element signature="e#1936#1937#0" expanded="true" />
-            <element signature="e#1989#1990#0" expanded="true" />
-            <element signature="e#1904#1905#0" expanded="true" />
-            <element signature="e#1942#1943#0" expanded="true" />
-            <element signature="e#2384#2385#0" expanded="true" />
-            <element signature="e#2423#2424#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-52">
-          <caret line="26" column="56" lean-forward="true" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
+        <state relative-caret-position="79">
+          <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
           <folding>
             <element signature="method#start#0;class#Server#0" />
             <element signature="method#waitFile#0;class#Server#0" />
@@ -627,20 +561,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/commands/TreatmentInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/server/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
+        <state relative-caret-position="578">
           <caret line="34" column="81" selection-start-line="34" selection-start-column="81" selection-end-line="34" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+          <folding>
+            <element signature="method#disconnect#0;class#Client#0" />
+            <element signature="method#readFromServer#0;class#Client#0" />
+            <element signature="e#1794#1795#0" expanded="true" />
+            <element signature="e#1827#1828#0" expanded="true" />
+            <element signature="e#1875#1876#0" expanded="true" />
+            <element signature="e#1909#1910#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/ac/chatirc/client/HandleInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
         </state>
       </provider>
     </entry>

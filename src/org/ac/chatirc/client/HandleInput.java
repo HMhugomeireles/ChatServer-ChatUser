@@ -7,29 +7,29 @@ import java.util.Scanner;
 
 public class HandleInput implements Runnable {
 
-    private PrintWriter outMessage;
     private Socket clientSocket;
     private Client client;
 
-    public HandleInput(Socket clientSocket, Client client) throws IOException {
-
+    public HandleInput(Socket clientSocket, Client client)  {
         this.client = client;
         this.clientSocket = clientSocket;
-        outMessage = new PrintWriter(clientSocket.getOutputStream(), true);
-
-    }
-    private void read() {
-
-        Scanner reader = new Scanner(System.in);
-        outMessage.println(reader.nextLine());
-
     }
 
     @Override
     public void run() {
-        System.out.println("input");
-        while(!client.isCloseConnection()){
-            read();
+        try {
+            PrintWriter writer = new PrintWriter(clientSocket.getOutputStream(), true);
+            Scanner scanner = new Scanner(System.in);
+
+            while (!clientSocket.isClosed()) {
+                String input = scanner.nextLine();
+
+                writer.println(input);
+            }
+
+            System.exit(0);
+        } catch (IOException e) {
+            System.err.println("Error handling socket connection: " + e.getMessage());
         }
 
     }

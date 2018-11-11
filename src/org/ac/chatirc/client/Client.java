@@ -11,45 +11,54 @@ public class Client {
 
     private Socket clientSocket;
     private String hostName;
-    private boolean closeConnection;
-    private HandleInput handleInput;
+    private boolean connection;
 
     public Client(String hostName, int port) throws IOException {
         this.hostName = hostName;
-        closeConnection = false;
+        connection = true;
         clientSocket = new Socket(hostName, port);
-        handleInput = new HandleInput(clientSocket,this);
     }
 
     public void connect() {
+        Thread keyboard = new Thread(new HandleInput(clientSocket,this));
+        keyboard.start();
 
-        onReadFromServer();
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
-        scannerAndSend();
-
-        if (isCloseConnection()) {
-            System.out.println("Your are disconnect from server.");
-            try {
-                clientSocket.close();
-            } catch (IOException e) {
-                System.err.println("Error on close socket.");
+            while (!clientSocket.isClosed()) {
+                waitMessage(reader);
             }
-            return;
+
+        } catch (IOException e) {
+            System.err.println("Error handling socket connection: " + e.getMessage());
         }
+
     }
 
-    private void onReadFromServer() {
 
-        while (!isCloseConnection()) {
-            System.out.println("1");
-            readFromServer();
+    private void waitMessage(BufferedReader reader) throws IOException {
+        String message = reader.readLine();
+
+        if (message == null) {
+            System.out.println("Connection closed from server side");
+            System.exit(0);
         }
 
+        System.out.println(message);
+    }
+
+    private void disconnect() throws IOException {
+        if (!isConnection()) {
+            System.out.println("Your are disconnect from server.");
+            clientSocket.close();
+            System.exit(0);
+        }
     }
 
     private void readFromServer() {
         BufferedReader inMessage;
-        System.out.println("read");
+
         try {
 
             inMessage = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -71,30 +80,19 @@ public class Client {
         } catch (IOException e) {
             System.err.println("Error to try read from the server. " + e.getMessage());
         }
-        System.out.println("2");
-    }
 
-    private void scannerAndSend() {
-        Runnable scanner = null;
-        try {
-            scanner = new HandleInput(clientSocket, this);
-        } catch (IOException e) {
-            System.err.println("Error on start read input. " + e.getMessage());
-        }
-        Thread input = new Thread(scanner);
-        input.start();
     }
 
     private boolean isServerCommand(String line) {
         return TreatmentInput.isCommand(line);
     }
 
-    public boolean isCloseConnection() {
-        return closeConnection;
+    public boolean isConnection() {
+        return connection;
     }
 
-    public void setCloseConnection(boolean state) {
-        closeConnection = state;
+    public void setConnection(boolean state) {
+        connection = state;
     }
 
 
