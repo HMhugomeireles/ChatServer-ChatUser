@@ -14,6 +14,8 @@ public class Message {
 
     public static final String WHOAMI = "You use the name ->";
 
+    public static final String FILE_MESSAGE = "/port ";
+
 
     public static String buildMessage(String message, String sender){
 

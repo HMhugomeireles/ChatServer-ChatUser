@@ -17,7 +17,7 @@ public class MainClient {
         try {
 
             Client client = new Client(hostName,port);
-            client.startCommunication();
+            client.connect();
 
         } catch (IOException e) {
             System.err.println("Error on connection to the server. " + e.getMessage());

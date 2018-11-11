@@ -4,24 +4,27 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Collections;
-import java.util.Currency;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 public class Server {
 
     private final int NUMBER_THREADS = 100;
+    public final int PORT_FILES = 9595;
 
     private ServerSocket serverSocket;
+    private ServerSocket serverFileSocket;
     private ExecutorService clientsService;
+    private ExecutorService fileService;
     private List<User> users;
 
     public Server(int port) throws IOException {
         serverSocket = new ServerSocket(port);
+        serverFileSocket = new ServerSocket(PORT_FILES);
         clientsService = Executors.newFixedThreadPool(NUMBER_THREADS);
+        fileService = Executors.newSingleThreadExecutor();
         users = Collections.synchronizedList(new LinkedList<>());
     }
 
@@ -33,8 +36,8 @@ public class Server {
         while (true) {
 
             waitConnection(count);
+            waitFile();
             count++;
-
         }
     }
 
@@ -53,6 +56,22 @@ public class Server {
 
         } catch (IOException e) {
             System.err.println("Error on accept connecting. " + e.getMessage());
+        }
+
+    }
+
+    private void waitFile(){
+        Socket userFileConnection = null;
+
+        try{
+            userFileConnection = serverFileSocket.accept();
+
+            File file = new File(userFileConnection, this);
+
+            fileService.execute(file);
+
+        }catch (IOException e){
+            System.err.println("Error on accept file connecting. " + e.getMessage());
         }
 
     }

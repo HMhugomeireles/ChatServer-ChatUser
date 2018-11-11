@@ -31,6 +31,12 @@ public class User implements Runnable {
 
             String line = reader.readLine();
 
+            if (line == null){
+                System.out.println("User " + name + " disconnect from the server.");
+                userSocket.close();
+                return;
+            }
+
             if(TreatmentInput.isCommand(line)){
 
                 CommandList cmd = CommandList.getCommandInput(TreatmentInput.getCommandFromLine(line));
