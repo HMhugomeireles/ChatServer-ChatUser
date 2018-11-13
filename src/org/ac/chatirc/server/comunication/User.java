@@ -1,5 +1,6 @@
-package org.ac.chatirc.server;
+package org.ac.chatirc.server.comunication;
 
+import org.ac.chatirc.server.commands.messages.Message;
 import org.ac.chatirc.server.commands.CommandList;
 import org.ac.chatirc.server.commands.TreatmentInput;
 

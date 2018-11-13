@@ -1,4 +1,8 @@
-package org.ac.chatirc.server;
+package org.ac.chatirc.server.comunication;
+
+import org.ac.chatirc.server.commands.messages.Message;
+import org.ac.chatirc.server.files.FileHandle;
+import org.ac.chatirc.server.files.FileServer;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -12,31 +16,27 @@ import java.util.concurrent.Executors;
 public class Server {
 
     private final int NUMBER_THREADS = 100;
-    public final int PORT_FILES = 9595;
 
     private ServerSocket serverSocket;
-    private ServerSocket serverFileSocket;
     private ExecutorService clientsService;
-    private ExecutorService fileService;
     private List<User> users;
 
     public Server(int port) throws IOException {
         serverSocket = new ServerSocket(port);
-        serverFileSocket = new ServerSocket(PORT_FILES);
         clientsService = Executors.newFixedThreadPool(NUMBER_THREADS);
-        fileService = Executors.newSingleThreadExecutor();
         users = Collections.synchronizedList(new LinkedList<>());
     }
 
     public void start() {
         int count = 1;
 
-        System.out.println("Server start and wait connection. " + serverSocket.toString());
+        System.out.println("Server start and wait connection. \n" + serverSocket.toString() + "\n");
+
+        Thread fileServer = new Thread(new FileServer());
+        fileServer.start();
 
         while (true) {
-
             waitConnection(count);
-            waitFile();
             count++;
         }
     }
@@ -56,22 +56,6 @@ public class Server {
 
         } catch (IOException e) {
             System.err.println("Error on accept connecting. " + e.getMessage());
-        }
-
-    }
-
-    private void waitFile(){
-        Socket userFileConnection = null;
-
-        try{
-            userFileConnection = serverFileSocket.accept();
-
-            File file = new File(userFileConnection, this);
-
-            fileService.execute(file);
-
-        }catch (IOException e){
-            System.err.println("Error on accept file connecting. " + e.getMessage());
         }
 
     }

@@ -11,16 +11,14 @@ public class Client {
 
     private Socket clientSocket;
     private String hostName;
-    private boolean connection;
 
     public Client(String hostName, int port) throws IOException {
         this.hostName = hostName;
-        connection = true;
         clientSocket = new Socket(hostName, port);
     }
 
     public void connect() {
-        Thread keyboard = new Thread(new HandleInput(clientSocket,this));
+        Thread keyboard = new Thread(new HandleInput(clientSocket, this));
         keyboard.start();
 
         try {
@@ -45,55 +43,41 @@ public class Client {
             System.exit(0);
         }
 
+        if (!isServerCommand(message)) {
+            System.out.println(message);
+            return;
+        }
+
+        prepareAndStartUpload(message);
+
+    }
+
+    public void printMessage(String message){
         System.out.println(message);
     }
 
-    private void disconnect() throws IOException {
-        if (!isConnection()) {
-            System.out.println("Your are disconnect from server.");
-            clientSocket.close();
-            System.exit(0);
-        }
-    }
-
-    private void readFromServer() {
-        BufferedReader inMessage;
+    private void prepareAndStartUpload(String line) {
+        String[] action = line.split(" ");
 
         try {
 
-            inMessage = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            String line = inMessage.readLine();
+            Runnable sendFile = new FileSend(action[2], hostName, Integer.parseInt(action[1]), this);
+            Thread uploadFile = new Thread(sendFile);
 
-            if (isServerCommand(line)) {
-
-                String[] action = line.split(" ");
-
-                Runnable sendFile = new FileSend(action[2], hostName, Integer.parseInt(action[1]), this);
-                Thread uploadFile = new Thread(sendFile);
-
-                uploadFile.start();
-                return;
-            }
-
-            System.out.println(line);
+            uploadFile.start();
 
         } catch (IOException e) {
-            System.err.println("Error to try read from the server. " + e.getMessage());
+            System.err.println("Error on prepare the upload file. " + e.getMessage());
         }
 
     }
 
     private boolean isServerCommand(String line) {
-        return TreatmentInput.isCommand(line);
+        String[] commands = line.split(" ");
+        if (commands[0].equals("/port")){
+            return true;
+        }
+        return false;
     }
-
-    public boolean isConnection() {
-        return connection;
-    }
-
-    public void setConnection(boolean state) {
-        connection = state;
-    }
-
 
 }

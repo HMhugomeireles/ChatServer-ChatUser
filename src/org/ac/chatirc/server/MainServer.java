@@ -1,5 +1,7 @@
 package org.ac.chatirc.server;
 
+import org.ac.chatirc.server.comunication.Server;
+
 import java.io.IOException;
 
 public class MainServer {

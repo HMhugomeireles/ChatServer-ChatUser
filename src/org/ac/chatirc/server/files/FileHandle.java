@@ -1,20 +1,21 @@
-package org.ac.chatirc.server;
+package org.ac.chatirc.server.files;
+
+import org.ac.chatirc.server.comunication.Server.;
 
 import java.io.*;
 import java.net.Socket;
 
-public class File implements Runnable {
+public class FileHandle implements Runnable {
 
-    private static final String resources = "resources/";
+
 
     private Socket fileSocket;
-    private Server server;
+    private FileServer fileServer;
 
 
-
-    public File(Socket fileSocket, Server server) {
+    public FileHandle(Socket fileSocket, FileServer fileServer) {
         this.fileSocket = fileSocket;
-        this.server = server;
+        this.fileServer = fileServer;
     }
 
     public void receiveFile(){
@@ -22,12 +23,14 @@ public class File implements Runnable {
 
         try{
 
-            byte[] mybytearray = new byte[1024];
+            byte[] bytesfile = new byte[1024];
+
+
             InputStream is = fileSocket.getInputStream();
-            FileOutputStream fos = new FileOutputStream(resources);
+            FileOutputStream fos = new FileOutputStream();
             BufferedOutputStream bos = new BufferedOutputStream(fos);
-            int bytesRead = is.read(mybytearray, 0, mybytearray.length);
-            bos.write(mybytearray, 0, bytesRead);
+            int bytesRead = is.read(bytesfile, 0, bytesfile.length);
+            bos.write(bytesfile, 0, bytesRead);
             bos.close();
             fileSocket.close();
 
@@ -48,6 +51,16 @@ public class File implements Runnable {
         }
     }
 
+    public void sendMessage(){
+        try {
+            PrintWriter printWriter = new PrintWriter(fileSocket.getOutputStream(), true);
+
+            printWriter.println("Started upload...");
+
+        } catch (IOException e){
+            System.err.println("Error on print. " + e.getMessage());
+        }
+    }
 
     @Override
     public void run() {

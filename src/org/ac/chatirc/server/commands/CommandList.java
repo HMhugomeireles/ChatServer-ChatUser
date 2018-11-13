@@ -1,6 +1,8 @@
 package org.ac.chatirc.server.commands;
 
 
+import org.ac.chatirc.server.commands.handles.*;
+
 public enum CommandList {
     CLOSE("/quit", new CloseHandle(), " ->Close the connection to the server."),
     HELP("/help", new HelpHandle(), " ->List all commands from the server."),
@@ -8,7 +10,6 @@ public enum CommandList {
     WHISPER("/whisper", new WhisperHandle(), " ->Send direct message to the user /whisper <User> <Message>"),
     WHOAMI("/whoami", new WhoamiHandle(), " ->Show the name you use."),
     USERS_LIST("/userlist", new UserlistHandle(), " ->List all users connect."),
-    FILE("/file", new FileHandle(), " ->Send file /file <User> <Path>"),
     UNKNOWN("", new UnknowHandle(), "");
 
     private String command;

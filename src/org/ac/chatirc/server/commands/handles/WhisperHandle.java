@@ -1,8 +1,10 @@
-package org.ac.chatirc.server.commands;
+package org.ac.chatirc.server.commands.handles;
 
-import org.ac.chatirc.server.Message;
-import org.ac.chatirc.server.Server;
-import org.ac.chatirc.server.User;
+import org.ac.chatirc.server.commands.CommandHandle;
+import org.ac.chatirc.server.commands.TreatmentInput;
+import org.ac.chatirc.server.commands.messages.Message;
+import org.ac.chatirc.server.comunication.Server;
+import org.ac.chatirc.server.comunication.User;
 
 public class WhisperHandle implements CommandHandle {
 

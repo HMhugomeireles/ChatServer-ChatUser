@@ -1,7 +1,7 @@
 package org.ac.chatirc.server.commands;
 
-import org.ac.chatirc.server.Server;
-import org.ac.chatirc.server.User;
+import org.ac.chatirc.server.comunication.Server;
+import org.ac.chatirc.server.comunication.User;
 
 public interface CommandHandle {
 

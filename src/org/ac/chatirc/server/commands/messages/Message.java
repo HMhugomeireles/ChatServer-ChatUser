@@ -1,4 +1,4 @@
-package org.ac.chatirc.server;
+package org.ac.chatirc.server.commands.messages;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
