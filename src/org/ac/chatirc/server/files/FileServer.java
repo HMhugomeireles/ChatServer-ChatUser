@@ -1,11 +1,12 @@
 package org.ac.chatirc.server.files;
 
+import org.ac.chatirc.server.comunication.Server;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Collections;
 import java.util.LinkedList;
-import java.util.Queue;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -18,20 +19,22 @@ public class FileServer implements Runnable {
 
     private ServerSocket serverSocket;
     private ExecutorService fileService;
-    private Queue<FileHandle> qfiles;
+    private List<FileHandle> fileHandlesList;
+    private Server server;
 
-    public FileServer() {
-
+    public FileServer(Server server) {
+        this.server = server;
+        init();
     }
 
     private void init() {
         try {
             serverSocket = new ServerSocket(PORT_FILES);
         } catch (IOException e) {
-            System.err.println("Error on start the server to manage files. " + e.getMessage());
+            System.err.println("Error on start the server to manage fileHandlesList. " + e.getMessage());
         }
         fileService = Executors.newFixedThreadPool(NUMBER_FILE_THREADS);
-        qfiles = new LinkedList<>();
+        fileHandlesList = new LinkedList<>();
     }
 
     private void waitingConnection() {
@@ -40,7 +43,7 @@ public class FileServer implements Runnable {
         try {
             userFileConnection = serverSocket.accept();
 
-            fileService.execute(addQfile(userFileConnection, this));
+            fileService.execute(addFileHandleList(userFileConnection, this));
 
         } catch (IOException e) {
             System.err.println("Error on accept connection. " + e.getMessage());
@@ -48,14 +51,18 @@ public class FileServer implements Runnable {
 
     }
 
-    private FileHandle addQfile(Socket socket, FileServer fileServer) {
+    private FileHandle addFileHandleList(Socket socket, FileServer fileServer) {
         FileHandle fileHandle = new FileHandle(socket, fileServer);
-        synchronized (qfiles) {
-            qfiles.add(fileHandle);
+        synchronized (fileHandlesList) {
+            fileHandlesList.add(fileHandle);
         }
         return fileHandle;
     }
 
+    public void sendMessageDone(String message, String name){
+        server.displayMessage(message);
+        server.sendTo(message, name);
+    }
 
     @Override
     public void run() {

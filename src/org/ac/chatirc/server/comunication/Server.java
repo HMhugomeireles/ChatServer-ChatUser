@@ -32,7 +32,7 @@ public class Server {
 
         System.out.println("Server start and wait connection. \n" + serverSocket.toString() + "\n");
 
-        Thread fileServer = new Thread(new FileServer());
+        Thread fileServer = new Thread(new FileServer(this));
         fileServer.start();
 
         while (true) {
@@ -69,6 +69,10 @@ public class Server {
 
             return user;
         }
+    }
+
+    public void displayMessage(String message){
+        System.out.println(Message.getHourNow() + message);
     }
 
     public String listUser(){

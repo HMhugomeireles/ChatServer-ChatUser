@@ -32,13 +32,13 @@ public class User implements Runnable {
 
             String line = reader.readLine();
 
-            if (line == null){
+            if (line == null) {
                 System.out.println("User " + name + " disconnect from the server.");
                 userSocket.close();
                 return;
             }
 
-            if(TreatmentInput.isCommand(line)){
+            if (TreatmentInput.isCommand(line)) {
 
                 CommandList cmd = CommandList.getCommandInput(TreatmentInput.getCommandFromLine(line));
 
@@ -59,7 +59,7 @@ public class User implements Runnable {
 
         try {
 
-            printer = new PrintWriter(userSocket.getOutputStream(),true);
+            printer = new PrintWriter(userSocket.getOutputStream(), true);
             printer.println(message);
 
         } catch (IOException e) {
@@ -76,7 +76,7 @@ public class User implements Runnable {
         this.name = name;
     }
 
-    public void close(){
+    public void close() {
         try {
             userSocket.close();
         } catch (IOException e) {

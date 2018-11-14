@@ -25,14 +25,12 @@ public class FileHandle implements Runnable {
 
             byte[] bytesfile = new byte[1024];
 
+            DataOutputStream dataOutputStream = new DataOutputStream(new BufferedOutputStream(fileSocket.getOutputStream()));
+            DataInputStream dataInputStream = new DataInputStream(new DataInputStream(fileSocket.getInputStream()));
 
-            InputStream is = fileSocket.getInputStream();
-            FileOutputStream fos = new FileOutputStream();
-            BufferedOutputStream bos = new BufferedOutputStream(fos);
-            int bytesRead = is.read(bytesfile, 0, bytesfile.length);
-            bos.write(bytesfile, 0, bytesRead);
-            bos.close();
-            fileSocket.close();
+
+            dataInputStream.read(bytesfile,0,bytesfile.length);
+
 
         } catch (IOException e) {
             System.err.println("Error on receive the file. " + e.getMessage());
