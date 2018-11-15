@@ -43,34 +43,14 @@ public class Client {
             System.exit(0);
         }
 
-        if (!isServerCommand(message)) {
-            System.out.println(message);
-            return;
-        }
-
-        prepareAndStartUpload(message);
-
+        System.out.println(message);
     }
 
     public void printMessage(String message){
         System.out.println(message);
     }
 
-    private void prepareAndStartUpload(String line) {
-        String[] action = line.split(" ");
 
-        try {
-
-            Runnable sendFile = new FileSend(action[2], hostName, Integer.parseInt(action[1]), this);
-            Thread uploadFile = new Thread(sendFile);
-
-            uploadFile.start();
-
-        } catch (IOException e) {
-            System.err.println("Error on prepare the upload file. " + e.getMessage());
-        }
-
-    }
 
     private boolean isServerCommand(String line) {
         String[] commands = line.split(" ");

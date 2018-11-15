@@ -15,7 +15,7 @@ public class FileServer implements Runnable {
     private final int PORT_FILES = 9595;
     private final int NUMBER_FILE_THREADS = 5;
 
-    private static final String resources = "resources/";
+    public static final String RESOURCES = "resources/";
 
     private ServerSocket serverSocket;
     private ExecutorService fileService;

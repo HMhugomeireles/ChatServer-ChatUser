@@ -10,6 +10,7 @@ public enum CommandList {
     WHISPER("/whisper", new WhisperHandle(), " ->Send direct message to the user /whisper <User> <Message>"),
     WHOAMI("/whoami", new WhoamiHandle(), " ->Show the name you use."),
     USERS_LIST("/userlist", new UserlistHandle(), " ->List all users connect."),
+    FIlE("/file", new FileReceiveHandle(), " ->Send file to the user, /file <user> <file>"),
     UNKNOWN("", new UnknowHandle(), "");
 
     private String command;

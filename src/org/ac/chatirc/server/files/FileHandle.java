@@ -1,13 +1,9 @@
 package org.ac.chatirc.server.files;
 
-import org.ac.chatirc.server.comunication.Server.;
-
 import java.io.*;
 import java.net.Socket;
 
 public class FileHandle implements Runnable {
-
-
 
     private Socket fileSocket;
     private FileServer fileServer;
@@ -20,16 +16,33 @@ public class FileHandle implements Runnable {
 
     public void receiveFile(){
         BufferedReader readFile = null;
+        FileOutputStream saveFile = null;
 
         try{
 
-            byte[] bytesfile = new byte[1024];
+            byte[] bytesData = new byte[1024];
 
-            DataOutputStream dataOutputStream = new DataOutputStream(new BufferedOutputStream(fileSocket.getOutputStream()));
-            DataInputStream dataInputStream = new DataInputStream(new DataInputStream(fileSocket.getInputStream()));
+            InputStream inputStream = fileSocket.getInputStream();
 
+            FileOutputStream fileOutputStream = new FileOutputStream(FileServer.RESOURCES);
 
-            dataInputStream.read(bytesfile,0,bytesfile.length);
+            BufferedOutputStream bufferedOutput = new BufferedOutputStream(fileOutputStream);
+
+            int readBytes = inputStream.read(bytesData,0,bytesData.length);
+
+            int currentBytesRead = readBytes;
+
+            while(readBytes > -1) {
+                if (readBytes >= 0){
+                    currentBytesRead+= readBytes;
+                }
+                readBytes = inputStream.read(bytesData, currentBytesRead, (bytesData.length-currentBytesRead));
+            }
+
+            bufferedOutput.write(bytesData, 0, currentBytesRead);
+            bufferedOutput.flush();
+
+            fileServer.sendMessageDone("File receive.", "Guess-1");
 
 
         } catch (IOException e) {

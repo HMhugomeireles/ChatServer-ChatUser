@@ -1,9 +1,6 @@
 package org.ac.chatirc.client;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.Socket;
 
 public class FileSend implements Runnable {
@@ -20,10 +17,17 @@ public class FileSend implements Runnable {
 
     private void connect(){
         try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileSocket.getInputStream()));
-
-            String line = bufferedReader.readLine();
-            client.printMessage(line);
+            byte [] fileBytes  = new byte [(int)file.length()];
+            FileInputStream fis = new FileInputStream(file);
+            BufferedInputStream bis = new BufferedInputStream(fis);
+            bis.read(fileBytes,0,fileBytes.length);
+            OutputStream os = fileSocket.getOutputStream();
+            System.out.println(file.getName());
+            System.out.println(file.isFile());
+            //System.out.println("Sending " + file.list().toString() + "(" + fileBytes.length + " bytes)");
+            os.write(fileBytes,0, fileBytes.length);
+            os.flush();
+            System.out.println("Done.");
 
         }catch (IOException e){
             System.err.println("Error on controller");
@@ -34,6 +38,6 @@ public class FileSend implements Runnable {
 
     @Override
     public void run() {
-
+        connect();
     }
 }
