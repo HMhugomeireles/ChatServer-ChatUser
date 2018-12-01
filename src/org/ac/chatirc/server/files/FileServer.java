@@ -52,10 +52,13 @@ public class FileServer implements Runnable {
     }
 
     private FileHandle addFileHandleList(Socket socket, FileServer fileServer) {
+
         FileHandle fileHandle = new FileHandle(socket, fileServer);
+
         synchronized (fileHandlesList) {
             fileHandlesList.add(fileHandle);
         }
+
         return fileHandle;
     }
 

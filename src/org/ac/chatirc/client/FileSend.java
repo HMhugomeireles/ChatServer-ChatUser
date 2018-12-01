@@ -30,7 +30,7 @@ public class FileSend implements Runnable {
             System.out.println("Done.");
 
         }catch (IOException e){
-            System.err.println("Error on controller");
+            System.err.println("Error on file. " + e.getMessage());
         }
     }
 

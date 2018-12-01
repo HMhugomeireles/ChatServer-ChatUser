@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class MainServer {
 
-    private static final int SERVER_PORT = 8080;
+    private static final int SERVER_PORT = 9080;
 
     public static void main(String[] args) {
 

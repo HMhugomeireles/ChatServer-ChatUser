@@ -14,11 +14,11 @@ public class FileHandle implements Runnable {
         this.fileServer = fileServer;
     }
 
-    public void receiveFile(){
+    public void receiveFile() {
         BufferedReader readFile = null;
         FileOutputStream saveFile = null;
 
-        try{
+        try {
 
             byte[] bytesData = new byte[1024];
 
@@ -28,15 +28,16 @@ public class FileHandle implements Runnable {
 
             BufferedOutputStream bufferedOutput = new BufferedOutputStream(fileOutputStream);
 
-            int readBytes = inputStream.read(bytesData,0,bytesData.length);
+            int readBytes = inputStream.read(bytesData, 0, bytesData.length);
 
             int currentBytesRead = readBytes;
 
-            while(readBytes > -1) {
-                if (readBytes >= 0){
-                    currentBytesRead+= readBytes;
+            while (readBytes > -1) {
+                if (readBytes >= 0) {
+                    currentBytesRead += readBytes;
                 }
-                readBytes = inputStream.read(bytesData, currentBytesRead, (bytesData.length-currentBytesRead));
+                System.out.println("while");
+                readBytes = inputStream.read(bytesData, currentBytesRead, (bytesData.length - currentBytesRead));
             }
 
             bufferedOutput.write(bytesData, 0, currentBytesRead);
@@ -62,13 +63,13 @@ public class FileHandle implements Runnable {
         }
     }
 
-    public void sendMessage(){
+    public void sendMessage() {
         try {
             PrintWriter printWriter = new PrintWriter(fileSocket.getOutputStream(), true);
 
             printWriter.println("Started upload...");
 
-        } catch (IOException e){
+        } catch (IOException e) {
             System.err.println("Error on print. " + e.getMessage());
         }
     }
@@ -76,7 +77,7 @@ public class FileHandle implements Runnable {
     @Override
     public void run() {
 
-
+        receiveFile();
 
     }
 
